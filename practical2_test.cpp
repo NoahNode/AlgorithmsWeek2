@@ -31,17 +31,39 @@ TEST_CASE("UnOrdered Search Axioms", "[Search]")
 		//assert that 5 is found at position 0
 		REQUIRE(sequentialSearch<int>(ua,5) == 0);
 
-		// assert that 20 is found at postion 9		
+		// assert that 20 is found at postion 9
+		REQUIRE(sequentialSearch<int>(ua, 20) == 9);
+
 	}
 
 	SECTION("Sequential Search Failure")
 	{
-		//assert that 100 is not found 	
+		//assert that 100 is not found
+		REQUIRE(sequentialSearch<int>(ua, 100) == -1);
 	}
+
+	SECTION("Binary Search Success")
+	{
+		//assert that 5 is found at position 0
+		REQUIRE(binarySearch<int>(ua, 5) == 0);
+
+		// assert that 20 is found at postion 9
+		REQUIRE(binarySearch<int>(ua, 20) == 9);
+
+	}
+
+	SECTION("Binary Search Failure")
+	{
+		//assert that 100 is not found
+		REQUIRE(sequentialSearch<int>(ua, 100) == -1);
+	}
+
+
 
 	SECTION("Count occurence exists")
 	{
-		//assert that 3 is found twice	
+		//assert that 3 is found twice
+		
 	}
 
 	SECTION("Count occurence non existent")

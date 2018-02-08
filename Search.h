@@ -30,6 +30,7 @@ template <class T>
 int binarySearch(const Array<T> & items, T key) {
 	int left = 0, right = items.length() - 1;
 
+
 	while (left <= right) {
 		int pivot = (left + right) / 2;
 
