@@ -16,8 +16,12 @@
 // PreCondition: items Array is full
 // PostCondition: return position if key found, otherwise -1
 template <class T>
-int sequentialSearch( ...items, ...keys ) {
-
+int sequentialSearch(const Array<int> & items, int key) {
+	for (int i = 0; i < items.length(); i++) {
+		if (key == items[i])
+			return i;
+	}
+	return -1;
 }
 
 // PreCondition: items Aarray is full
