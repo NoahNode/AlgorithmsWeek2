@@ -16,7 +16,7 @@
 // PreCondition: items Array is full
 // PostCondition: return position if key found, otherwise -1
 template <class T>
-int sequentialSearch(const Array<int> & items, int key) {
+int sequentialSearch(const Array<T> & items, T key) {
 	for (int i = 0; i < items.length(); i++) {
 		if (key == items[i])
 			return i;
@@ -27,8 +27,23 @@ int sequentialSearch(const Array<int> & items, int key) {
 // PreCondition: items Aarray is full
 // PostCondition: return position if key found, otherwise -1
 template <class T>
-int binarySearch( ...items, ...key ) {
-   
+int binarySearch(const Array<T> & items, T key) {
+	int left = 0, right = items.length() - 1;
+
+	while (left <= right) {
+		int pivot = (left + right) / 2;
+
+		if (searchKey == items[pivot]) {
+			return pivot;	    // found
+		}
+		else if (searchKey > items[pivot]) {
+			left = pivot + 1; 	// search to right
+		}
+		else {
+			right = pivot - 1; 	// search to left
+		}
+	}
+	return -1;
 }
 
 // PreCondition: Data array is full
